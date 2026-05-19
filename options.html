@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Refreshy Options</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body class="options">
+    <main>
+      <header>
+        <div>
+          <h1>Refreshy</h1>
+          <p class="muted">Configure which Chrome tabs should reload after you renew your browser session.</p>
+        </div>
+      </header>
+
+      <form id="optionsForm">
+        <label for="tabPatterns">Work tabs to refresh</label>
+        <textarea id="tabPatterns" rows="7" spellcheck="false"></textarea>
+        <p class="hint">One wildcard pattern per line for issue tracking, docs, code hosting, reviews, or any other private work surface. Keep private hosts in your local extension settings, not in this repository.</p>
+
+        <fieldset>
+          <legend>Refresh behavior</legend>
+          <label class="check-row">
+            <input id="refreshPinnedTabs" type="checkbox">
+            <span>Refresh pinned tabs</span>
+          </label>
+          <label class="check-row">
+            <input id="refreshDiscardedTabs" type="checkbox">
+            <span>Refresh sleeping/discarded tabs</span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Optional automatic refresh</legend>
+          <label class="check-row">
+            <input id="autoRefreshAfterLogin" type="checkbox">
+            <span>Refresh matching tabs after a configured login page finishes loading</span>
+          </label>
+
+          <label for="loginSuccessPatterns">Login pages that mean the session was renewed</label>
+          <textarea id="loginSuccessPatterns" rows="6" spellcheck="false"></textarea>
+
+          <label for="cooldownMinutes">Auto-refresh cooldown, minutes</label>
+          <input id="cooldownMinutes" type="number" min="1" max="240" step="1">
+          <p class="hint">This prevents repeated reloads when sign-in performs several redirects.</p>
+        </fieldset>
+
+        <div class="button-row">
+          <button id="saveOptions" class="primary-button" type="submit">Save options</button>
+          <button id="resetOptions" class="secondary-button" type="button">Reset defaults</button>
+        </div>
+
+        <p id="saveStatus" class="muted" role="status"></p>
+      </form>
+    </main>
+
+    <script src="src/options.js"></script>
+  </body>
+</html>

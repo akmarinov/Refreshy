@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Refreshy</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body class="popup">
+    <main>
+      <header>
+        <h1>Refreshy</h1>
+        <button id="openOptions" class="icon-button" type="button" title="Options" aria-label="Options">...</button>
+      </header>
+
+      <section class="status-panel" aria-live="polite">
+        <p id="summary">Looking for matching work tabs...</p>
+        <p id="details" class="muted"></p>
+      </section>
+
+      <button id="refreshTabs" class="primary-button" type="button">Refresh matching tabs</button>
+
+      <section>
+        <h2>Matched tabs</h2>
+        <ul id="tabList" class="tab-list"></ul>
+      </section>
+    </main>
+
+    <script src="src/popup.js"></script>
+  </body>
+</html>

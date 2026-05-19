@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Refreshy",
+  "description": "Refreshes selected work tabs after you renew your browser session.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "Refresh work tabs",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}
